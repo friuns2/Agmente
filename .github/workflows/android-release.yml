@@ -32,26 +32,16 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
-      - name: Build Release APK
-        run: ./gradlew assembleRelease
-
-      - name: Get version name
-        id: version
+      - name: Rename APK with version
         run: |
           VERSION=$(grep 'versionName' app/build.gradle.kts | head -1 | sed 's/.*"\(.*\)".*/\1/')
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/Agmente-v${VERSION}-debug.apk
 
-      - name: Upload Debug APK artifact
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: agmente-debug-apk
-          path: AgmenteAndroid/app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Upload Release APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: agmente-release-apk
-          path: AgmenteAndroid/app/build/outputs/apk/release/app-release-unsigned.apk
+          name: agmente-apk
+          path: AgmenteAndroid/app/build/outputs/apk/debug/Agmente-*.apk
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
@@ -62,8 +52,7 @@ jobs:
             ## 📱 Agmente ${{ github.ref_name }}
 
             ### Downloads
-            - **🤖 Android APK (Debug)**: Ready to sideload — no signing required
-            - **🤖 Android APK (Release)**: Unsigned release build
+            - **🤖 Android APK**: Ready to sideload — install directly on your device
 
             ### What's included
             - ACP + Codex protocol support
@@ -72,9 +61,7 @@ jobs:
             - Session management with persistence
 
             > 🍎 iOS version available on the [App Store](https://apps.apple.com/us/app/agmente/id6756249477)
-          files: |
-            AgmenteAndroid/app/build/outputs/apk/debug/app-debug.apk
-            AgmenteAndroid/app/build/outputs/apk/release/app-release-unsigned.apk
+          files: AgmenteAndroid/app/build/outputs/apk/debug/Agmente-*.apk
           draft: false
           prerelease: false
 
@@ -90,13 +77,10 @@ jobs:
             **Automated build** from `main` branch.
 
             ### Downloads
-            - **🤖 Android APK (Debug)**: Ready to sideload
-            - **🤖 Android APK (Release)**: Unsigned release build
+            - **🤖 Android APK**: Ready to sideload — install directly on your device
 
             > 🍎 iOS version available on the [App Store](https://apps.apple.com/us/app/agmente/id6756249477)
-          files: |
-            AgmenteAndroid/app/build/outputs/apk/debug/app-debug.apk
-            AgmenteAndroid/app/build/outputs/apk/release/app-release-unsigned.apk
+          files: AgmenteAndroid/app/build/outputs/apk/debug/Agmente-*.apk
           draft: false
           prerelease: false
           make_latest: true
