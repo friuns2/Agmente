@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.agmente.CodexE2ETest" tests="1" failures="0" errors="0" skipped="0" time="4.73" timestamp="2026-02-22T04:58:52" hostname="localhost">
+  <properties>
+    <property name="device" value="SM-G950F - 13" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="fullCodexFlow" classname="com.agmente.CodexE2ETest" time="3.575" />
+</testsuite>

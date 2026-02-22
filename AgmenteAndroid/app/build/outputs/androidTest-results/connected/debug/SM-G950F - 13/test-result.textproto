@@ -1,0 +1,68 @@
+# 2026-02-22T04:58:52.965635Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 1
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "CodexE2ETest"
+    test_package: "com.agmente"
+    test_method: "fullCodexFlow"
+    start_time {
+      seconds: 1771736328
+      nanos: 210000000
+    }
+    end_time {
+      seconds: 1771736331
+      nanos: 785000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/outputs/androidTest-results/connected/debug/SM-G950F - 13/logcat-com.agmente.CodexE2ETest-fullCodexFlow.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/outputs/androidTest-results/connected/debug/SM-G950F - 13/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/outputs/androidTest-results/connected/debug/SM-G950F - 13/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/outputs/androidTest-results/connected/debug/SM-G950F - 13/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/outputs/androidTest-results/connected/debug/SM-G950F - 13/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

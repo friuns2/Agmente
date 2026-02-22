@@ -1,0 +1,7 @@
+com.agmente.test.app-core-1.6.1-0 /Users/igor/.gradle/caches/8.11.1/transforms/1b9ce9e324ec4f211def622dfd8e05fe/transformed/core-1.6.1/res
+com.agmente.test.app-tracing-1.2.0-1 /Users/igor/.gradle/caches/8.11.1/transforms/2cd06bc39b2a48e1ac126ef86beb5a44/transformed/tracing-1.2.0/res
+com.agmente.test.app-androidTest-2 /Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/generated/res/resValues/androidTest/debug
+com.agmente.test.app-mergeDebugAndroidTestResources-3 /Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.agmente.test.app-mergeDebugAndroidTestResources-4 /Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.agmente.test.app-debugAndroidTest-5 /Users/igor/Git-projects/Agmente/AgmenteAndroid/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+com.agmente.test.app-debug-6 /Users/igor/Git-projects/Agmente/AgmenteAndroid/appserverclient/build/intermediates/packaged_res/debug/packageDebugResources

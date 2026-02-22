@@ -1,0 +1,5 @@
+com.agmente.appserverclient.test.appserverclient-androidTest-0 /Users/igor/Git-projects/Agmente/AgmenteAndroid/appserverclient/build/generated/res/resValues/androidTest/debug
+com.agmente.appserverclient.test.appserverclient-mergeDebugAndroidTestResources-1 /Users/igor/Git-projects/Agmente/AgmenteAndroid/appserverclient/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.agmente.appserverclient.test.appserverclient-mergeDebugAndroidTestResources-2 /Users/igor/Git-projects/Agmente/AgmenteAndroid/appserverclient/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.agmente.appserverclient.test.appserverclient-debugAndroidTest-3 /Users/igor/Git-projects/Agmente/AgmenteAndroid/appserverclient/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+com.agmente.appserverclient.test.appserverclient-debug-4 /Users/igor/Git-projects/Agmente/AgmenteAndroid/appserverclient/build/intermediates/packaged_res/debug/packageDebugResources

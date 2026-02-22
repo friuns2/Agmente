@@ -1,0 +1,5 @@
+com.agmente.acpclient.test.acpclient-androidTest-0 /Users/igor/Git-projects/Agmente/AgmenteAndroid/acpclient/build/generated/res/resValues/androidTest/debug
+com.agmente.acpclient.test.acpclient-mergeDebugAndroidTestResources-1 /Users/igor/Git-projects/Agmente/AgmenteAndroid/acpclient/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.agmente.acpclient.test.acpclient-mergeDebugAndroidTestResources-2 /Users/igor/Git-projects/Agmente/AgmenteAndroid/acpclient/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.agmente.acpclient.test.acpclient-debugAndroidTest-3 /Users/igor/Git-projects/Agmente/AgmenteAndroid/acpclient/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+com.agmente.acpclient.test.acpclient-debug-4 /Users/igor/Git-projects/Agmente/AgmenteAndroid/acpclient/build/intermediates/packaged_res/debug/packageDebugResources

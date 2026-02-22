@@ -1,0 +1,90 @@
+02-22 11:58:48.642 12886 12903 I TestRunner: started: fullCodexFlow(com.agmente.CodexE2ETest)
+02-22 11:58:48.712 12886 12903 I CodexE2ETest: === Starting Codex E2E test ===
+02-22 11:58:48.724 12886 12903 I CodexE2ETest: --- Step 1: Connecting to ws://192.168.1.6:8788 ---
+02-22 11:58:48.762 12886 12903 I CodexE2ETest: Connection state: Connecting
+02-22 11:58:48.784 12886 12903 W System.err: SLF4J: No SLF4J providers were found.
+02-22 11:58:48.784 12886 12903 W System.err: SLF4J: Defaulting to no-operation (NOP) logger implementation
+02-22 11:58:48.784 12886 12903 W System.err: SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+02-22 11:58:48.790 12886 12905 D TrafficStats: tagSocket(71) with statsTag=0xffffffff, statsUid=-1
+02-22 11:58:48.875 12886 12905 I CodexE2ETest: Connection state: Connected
+02-22 11:58:48.878 12886 12903 I CodexE2ETest: Connected successfully
+02-22 11:58:48.878 12886 12903 I CodexE2ETest: --- Step 2: Initializing ---
+02-22 11:58:49.120 12886 12903 I CodexE2ETest: Initialized: server=Agmente E2E Test, version=0.104.0
+02-22 11:58:49.122 12886 12903 I CodexE2ETest: --- Step 3: Fetching models ---
+02-22 11:58:49.163 12886 12903 I CodexE2ETest: model/list raw response: Response(value=JSONRPCResponse(jsonrpc=2.0, id=IntId(value=2), result=ObjectValue(value={data=ArrayValue(value=[ObjectValue(value={id=StringValue(value=gpt-5.3-codex), model=StringValue(value=gpt-5.3-codex), upgrade=Null, displayName=StringValue(value=gpt-5.3-codex), description=StringValue(value=Latest frontier agentic coding model.), hidden=BoolValue(value=false), supportedReasoningEfforts=ArrayValue(value=[ObjectValue(value={reasoningEffort=StringValue(value=low), description=StringValue(value=Fast responses with lighter reasoning)}), ObjectValue(value={reasoningEffort=StringValue(value=medium), description=StringValue(value=Balances speed and reasoning depth for everyday tasks)}), ObjectValue(value={reasoningEffort=StringValue(value=high), description=StringValue(value=Greater reasoning depth for complex problems)}), ObjectValue(value={reasoningEffort=StringValue(value=xhigh), description=StringValue(value=Extra high reasoning depth for complex problems)})]), defaultReasoningEffort=StringValue(value=medium), inputModalities=ArrayValue(value=[StringValue(value=text), StringValue(value=image)]), supportsPersonality=BoolValue(value=true), isDefault=BoolValue(value=true)}), ObjectValue(value={id=StringValue(value=gpt-5.2-codex), model=StringValue(value=gpt-5.2-codex), upgrade=StringValue(value=gpt-5.3-codex), displayName=StringValue(value=gpt-5.2-codex), description=StringValue(value=Frontier agentic coding model.), hidden=BoolValue(value=false), supportedReasoningEfforts=ArrayValue(value=[ObjectValue(value={reasoningEffort=StringValue(value=low), description=StringValue(value=Fast responses with lighter reasoning)}), ObjectValue(value={reasoningEffort=StringValue(value=medium), description=StringValue(value=Balances speed and reasoning depth for everyday tasks)}), ObjectValue(value={reasoningEffort=StringValue(value=high), description=StringValue(value=Greater reasoning depth for complex problems)}), ObjectValue(value={reasoningEffort=StringValue(value=xhigh), description=StringValue(value=Extra high reasoning depth for complex problems)})]), defaultReasoningEffort=StringValue(value=medium), inputModalities=ArrayValue(value=[StringValue(value=text), StringValue(value=image)]), supportsPersonality=BoolValue(value=true), isDefault=BoolValue(value=false)}), ObjectValue(value={id=StringValue(value=gpt-5.1-codex-max), model=StringValue(value=gpt-5.1-codex-max), upgrade=StringValue(value=gpt-5.3-codex), displayName=StringValue(value=gpt-5.1-codex-max), description=StringValue(value=Codex-optimized flagship for deep and fast reasoning.), hidden=BoolValue(value=false), supportedReasoningEfforts=ArrayValue(value=[ObjectValue(value={reasoningEffort=StringValue(value=low), description=StringValue(value=Fast responses with lighter reasoning)}), ObjectValue(value={reasoningEffort=StringValue(value=medium), description=StringValue(value=Balances speed and reasoning depth for everyday tasks)}), ObjectValue(value={reasoningEffort=StringValue(value=high), description=StringValue(value=Greater reasoning depth for complex problems)}), ObjectValue(value={reasoningEffort=StringValue(value=xhigh), description=StringValue(value=Extra high reasoning depth for complex problems)})]), defaultReasoningEffort=StringValue(value=medium), inputModalities=ArrayValue(value=[StringValue(value=text), StringValue(value=image)]), supportsPersonality=BoolValue(value=false), isDefault=BoolValue(value=false)}), ObjectValue(value={id=StringValue(value=gpt-5.2), model=StringValue(value=gpt-5.2), upgrade=StringValue(value=gpt-5.3-codex), displayName=StringValue(value=gpt-5.2), description=StringValue(value=Latest frontier model with improvements across knowledge, reasoning and coding), hidden=BoolValue(value=false), supportedReasoningEfforts=ArrayValue(value=[ObjectValue(value={reasoningEffort=StringValue(value=low), description=StringValue(value=Balances speed with some reasoning; useful for straightforward queries and short explanations)}), ObjectValue(value={reasoningEffort=StringValue(value=m
+02-22 11:58:49.164 12886 12903 I CodexE2ETest: Models: [gpt-5.3-codex, gpt-5.2-codex, gpt-5.1-codex-max, gpt-5.2, gpt-5.1-codex-mini], default=gpt-5.3-codex
+02-22 11:58:49.164 12886 12903 I CodexE2ETest: --- Step 4: Creating thread ---
+02-22 11:58:49.286 12886 12903 I CodexE2ETest: thread/start raw response: Response(value=JSONRPCResponse(jsonrpc=2.0, id=IntId(value=3), result=ObjectValue(value={thread=ObjectValue(value={id=StringValue(value=019c83b6-ea62-7b22-ad1a-060a180033ca), preview=StringValue(value=), modelProvider=StringValue(value=openai), createdAt=NumberValue(value=1.771736328E9), updatedAt=NumberValue(value=1.771736328E9), path=StringValue(value=/Users/igor/.codex/sessions/2026/02/22/rollout-2026-02-22T11-58-48-019c83b6-ea62-7b22-ad1a-060a180033ca.jsonl), cwd=StringValue(value=/Users/igor/Git-projects/Agmente/AgmenteAndroid), cliVersion=StringValue(value=0.104.0), source=StringValue(value=vscode), gitInfo=Null, turns=ArrayValue(value=[])}), model=StringValue(value=gpt-5.3-codex), modelProvider=StringValue(value=openai), cwd=StringValue(value=/Users/igor/Git-projects/Agmente/AgmenteAndroid), approvalPolicy=StringValue(value=never), sandbox=ObjectValue(value={type=StringValue(value=dangerFullAccess)}), reasoningEffort=StringValue(value=low)})))
+02-22 11:58:49.287 12886 12903 I CodexE2ETest: Thread created: id=019c83b6-ea62-7b22-ad1a-060a180033ca
+02-22 11:58:49.287 12886 12903 I CodexE2ETest: --- Step 5: Sending prompt: 'Say exactly: Hello from Agmente test' ---
+02-22 11:58:49.290 12886 12905 I CodexE2ETest: Event: ThreadStarted
+02-22 11:58:49.293 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.295 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.297 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.300 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.301 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.314 12886 12903 I CodexE2ETest: --- Step 6: Waiting for response (up to 120s) ---
+02-22 11:58:49.323 12886 12905 I CodexE2ETest: Event: TurnStarted
+02-22 11:58:49.325 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.326 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.328 12886 12905 I CodexE2ETest: Event: ItemStarted
+02-22 11:58:49.329 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.371 12886 12905 I CodexE2ETest: Event: ItemCompleted
+02-22 11:58:49.373 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.486 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.492 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.495 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.511 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.518 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:49.614  4491  4568 D bauth_FPBAuthService: pcf : 0x1012, 0 ,2 ,0 ,0 ,0 ,2,
+02-22 11:58:49.614  4491  4568 D bauth_FPBAuthService: thread id : 2, preenroll_flag : 0, nd cnt : 1, cso : 0, et : 0
+02-22 11:58:49.614  4491  4568 D bauth_FPBAuthService: FPBAuthService, 9983
+02-22 11:58:50.615  4491  4568 D bauth_FPBAuthService: pcf : 0x1012, 0 ,2 ,0 ,0 ,0 ,2,
+02-22 11:58:50.615  4491  4568 D bauth_FPBAuthService: thread id : 2, preenroll_flag : 0, nd cnt : 1, cso : 0, et : 0
+02-22 11:58:50.615  4491  4568 D bauth_FPBAuthService: FPBAuthService, 9983
+02-22 11:58:50.885 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:50.897 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:51.459 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:51.468 12886 12905 I CodexE2ETest: Event: ItemStarted
+02-22 11:58:51.615  4491  4568 D bauth_FPBAuthService: pcf : 0x1012, 0 ,2 ,0 ,0 ,0 ,2,
+02-22 11:58:51.616  4491  4568 D bauth_FPBAuthService: thread id : 2, preenroll_flag : 0, nd cnt : 1, cso : 0, et : 0
+02-22 11:58:51.616  4491  4568 D bauth_FPBAuthService: FPBAuthService, 9983
+02-22 11:58:52.089 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.093 12886 12905 I CodexE2ETest: Event: ItemCompleted
+02-22 11:58:52.097 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.101 12886 12905 I CodexE2ETest: Event: ItemStarted
+02-22 11:58:52.105 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.108 12886 12905 I CodexE2ETest: Event: AgentMessageDelta
+02-22 11:58:52.108 12886 12905 D CodexE2ETest: Delta: Hello
+02-22 11:58:52.109 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.111 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.113 12886 12905 I CodexE2ETest: Event: AgentMessageDelta
+02-22 11:58:52.113 12886 12905 D CodexE2ETest: Delta:  from
+02-22 11:58:52.115 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.117 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.119 12886 12905 I CodexE2ETest: Event: AgentMessageDelta
+02-22 11:58:52.119 12886 12905 D CodexE2ETest: Delta:  Ag
+02-22 11:58:52.120 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.122 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.124 12886 12905 I CodexE2ETest: Event: AgentMessageDelta
+02-22 11:58:52.124 12886 12905 D CodexE2ETest: Delta: mente
+02-22 11:58:52.126 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.127 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.128 12886 12905 I CodexE2ETest: Event: AgentMessageDelta
+02-22 11:58:52.129 12886 12905 D CodexE2ETest: Delta:  test
+02-22 11:58:52.130 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.197 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.204 12886 12905 I CodexE2ETest: Event: ItemCompleted
+02-22 11:58:52.206 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.219 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.224 12886 12905 I CodexE2ETest: Event: TokenUsageUpdated
+02-22 11:58:52.226 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.228 12886 12905 I CodexE2ETest: Event: GenericNotification
+02-22 11:58:52.230 12886 12905 I CodexE2ETest: Event: TurnCompleted
+02-22 11:58:52.231 12886 12905 I CodexE2ETest: Turn completed for thread 019c83b6-ea62-7b22-ad1a-060a180033ca
+02-22 11:58:52.232 12886 12903 I CodexE2ETest: Full response: Hello from Agmente test
+02-22 11:58:52.233 12886 12903 I CodexE2ETest: Events verified: 1 TurnStarted, 5 deltas, 1 TurnCompleted
+02-22 11:58:52.234 12886 12903 I CodexE2ETest: --- Step 8: Disconnecting ---
+02-22 11:58:52.242 12886 12903 I CodexE2ETest: Connection state: Disconnected
+02-22 11:58:52.247 12886 12903 I CodexE2ETest: === Codex E2E test PASSED ===
+02-22 11:58:52.249 12886 12903 I TestRunner: finished: fullCodexFlow(com.agmente.CodexE2ETest)
