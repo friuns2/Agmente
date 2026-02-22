@@ -1,0 +1,102 @@
+name: Android APK Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: AgmenteAndroid
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Build Release APK
+        run: ./gradlew assembleRelease
+
+      - name: Get version name
+        id: version
+        run: |
+          VERSION=$(grep 'versionName' app/build.gradle.kts | head -1 | sed 's/.*"\(.*\)".*/\1/')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Debug APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: agmente-debug-apk
+          path: AgmenteAndroid/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload Release APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: agmente-release-apk
+          path: AgmenteAndroid/app/build/outputs/apk/release/app-release-unsigned.apk
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Agmente ${{ github.ref_name }}
+          body: |
+            ## 📱 Agmente ${{ github.ref_name }}
+
+            ### Downloads
+            - **🤖 Android APK (Debug)**: Ready to sideload — no signing required
+            - **🤖 Android APK (Release)**: Unsigned release build
+
+            ### What's included
+            - ACP + Codex protocol support
+            - Connect to Copilot CLI, Gemini, Claude Code, Codex, Qwen, Vibe
+            - Full tool call visibility, file changes, plan mode
+            - Session management with persistence
+
+            > 🍎 iOS version available on the [App Store](https://apps.apple.com/us/app/agmente/id6756249477)
+          files: |
+            AgmenteAndroid/app/build/outputs/apk/debug/app-debug.apk
+            AgmenteAndroid/app/build/outputs/apk/release/app-release-unsigned.apk
+          draft: false
+          prerelease: false
+
+      - name: Create latest release (workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Agmente Latest Build
+          body: |
+            ## 📱 Agmente Latest Build
+
+            **Automated build** from `main` branch.
+
+            ### Downloads
+            - **🤖 Android APK (Debug)**: Ready to sideload
+            - **🤖 Android APK (Release)**: Unsigned release build
+
+            > 🍎 iOS version available on the [App Store](https://apps.apple.com/us/app/agmente/id6756249477)
+          files: |
+            AgmenteAndroid/app/build/outputs/apk/debug/app-debug.apk
+            AgmenteAndroid/app/build/outputs/apk/release/app-release-unsigned.apk
+          draft: false
+          prerelease: false
+          make_latest: true

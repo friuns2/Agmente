@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agmente — AI Coding Agents in Your Pocket</title>
+<meta name="description" content="Connect to any AI coding agent from your phone. Copilot CLI, Gemini, Claude Code, Codex, Qwen, Vibe — iOS, Android, React Native." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #d2a8ff;
+    --gradient: linear-gradient(135deg, #58a6ff 0%, #3fb950 50%, #d2a8ff 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(88,166,255,0.15) 0%, transparent 60%);
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+  .hero .tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+  .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 32px; }
+  .badges img { height: 28px; }
+  .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 8px;
+    font-size: 1rem; font-weight: 600;
+    border: none; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #79c0ff; text-decoration: none; }
+  .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); text-decoration: none; }
+  .btn-green { background: var(--accent2); color: #fff; }
+  .btn-green:hover { background: #56d364; text-decoration: none; }
+
+  .preview { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  .preview img { width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+
+  section { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+  section h2 {
+    font-size: 1.8rem; margin-bottom: 32px; text-align: center;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+  .feature-card:hover { border-color: var(--accent); }
+  .feature-card .icon { font-size: 2rem; margin-bottom: 12px; }
+  .feature-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .feature-card p { color: var(--muted); font-size: 0.95rem; }
+
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .agents-table th {
+    background: rgba(88,166,255,0.1);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .agents-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .agents-table tr:last-child td { border-bottom: none; }
+  .agents-table code {
+    background: rgba(110,118,129,0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+
+  .arch-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    overflow-x: auto;
+  }
+  .arch-block pre {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .quickstart {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    overflow-x: auto;
+  }
+  .quickstart pre {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .quickstart .comment { color: var(--accent2); }
+  .quickstart .cmd { color: var(--text); }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .tech-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .tech-card .tech-icon { font-size: 2rem; margin-bottom: 8px; }
+  .tech-card h4 { margin-bottom: 4px; }
+  .tech-card p { color: var(--muted); font-size: 0.85rem; }
+
+  .screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .screenshots figure {
+    text-align: center;
+  }
+  .screenshots img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .screenshots figcaption {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+  }
+  footer .footer-line { font-size: 0.95rem; margin-bottom: 8px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 50px 16px 40px; }
+    section { padding: 40px 16px; }
+    .feature-card { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🔥 Agmente</h1>
+  <p class="tagline">
+    Every AI coding agent. Every protocol. One app.
+    <br />Copilot CLI. Gemini. Claude Code. Codex. Qwen. Vibe.
+    <br /><strong>All from your phone.</strong>
+  </p>
+  <div class="badges">
+    <img src="https://img.shields.io/badge/Swift-5.9+-F05138?logo=swift&logoColor=white&style=for-the-badge" alt="Swift" />
+    <img src="https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge" alt="Kotlin" />
+    <img src="https://img.shields.io/badge/React_Native-0.84-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React Native" />
+    <img src="https://img.shields.io/badge/App_Store-LIVE-brightgreen?logo=apple&logoColor=white&style=for-the-badge" alt="App Store" />
+    <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License" />
+  </div>
+  <div class="cta-row">
+    <a href="https://apps.apple.com/us/app/agmente/id6756249477" class="btn btn-primary">📱 App Store (iOS)</a>
+    <a href="https://github.com/friuns2/Agmente/releases/latest" class="btn btn-green">🤖 Download APK</a>
+    <a href="https://github.com/friuns2/Agmente" class="btn btn-secondary">⭐ GitHub</a>
+  </div>
+  <div class="preview">
+    <img src="app-preview-wide.jpg" alt="Agmente app preview" />
+  </div>
+</div>
+
+<section>
+  <h2>🚀 Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon">🔌</div>
+      <h3>Multi-Agent Support</h3>
+      <p>Connect to Copilot CLI, Gemini CLI, Claude Code, OpenAI Codex, Qwen, Mistral Vibe — any ACP or Codex-compatible agent.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🧠</div>
+      <h3>Protocol Auto-Detection</h3>
+      <p>Automatically detects ACP vs Codex protocol after initialize. Zero configuration needed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔧</div>
+      <h3>Tool Call Visibility</h3>
+      <p>See every file read, write, and terminal command your agent executes. Full transparency.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📂</div>
+      <h3>File Changes & Diffs</h3>
+      <p>Inline diffs for every file the agent modifies. Review changes before they land.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📋</div>
+      <h3>Plan Mode</h3>
+      <p>Review Codex plans before execution. Approve, reject, or iterate on the agent's approach.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💾</div>
+      <h3>Session Persistence</h3>
+      <p>Resume conversations across app restarts. Local + server-side session storage.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔐</div>
+      <h3>Remote Access</h3>
+      <p>Cloudflare Tunnel + Access tokens for secure wss:// connections to remote agents.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🏗️</div>
+      <h3>Three Platforms</h3>
+      <p>iOS (SwiftUI), Android (Compose), React Native — the same experience everywhere.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⚡</div>
+      <h3>Skills & Permissions</h3>
+      <p>Select agent skills, toggle YOLO / Auto Edit / Plan / Default execution modes.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🔌 Supported Agents</h2>
+  <table class="agents-table">
+    <thead>
+      <tr><th>Agent</th><th>Protocol</th><th>Command</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🟢 GitHub Copilot CLI</td><td>ACP</td><td><code>copilot --acp</code></td></tr>
+      <tr><td>🔵 Google Gemini CLI</td><td>ACP</td><td><code>npx @google/gemini-cli --experimental-acp</code></td></tr>
+      <tr><td>🟣 Claude Code</td><td>ACP</td><td><code>npx @zed-industries/claude-code-acp</code></td></tr>
+      <tr><td>⚫ OpenAI Codex</td><td>Codex</td><td><code>codex app-server --listen ws://...</code></td></tr>
+      <tr><td>🟠 Qwen</td><td>ACP</td><td><code>qwen --experimental-acp</code></td></tr>
+      <tr><td>🔴 Mistral Vibe</td><td>ACP</td><td><code>vibe-acp</code></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>📱 Screenshots</h2>
+  <div class="screenshots">
+    <figure>
+      <img src="screenshots/android-sessions.png" alt="Android session list" />
+      <figcaption>📋 Session List — Connected & Initialized</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/android-home.png" alt="Android chat view" />
+      <figcaption>💬 Chat — Tool Calls & File Changes</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>🏗️ Architecture</h2>
+  <div class="arch-block">
+<pre>
+┌─────────────────────────────────────────────────────────────┐
+│                        📱 Agmente App                       │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
+│  │  iOS (Swift)  │  │Android (Kt)  │  │  React Native    │  │
+│  └──────┬───────┘  └──────┬───────┘  └────────┬─────────┘  │
+│         │                 │                    │             │
+│  ┌──────▼─────────────────▼────────────────────▼─────────┐  │
+│  │              Protocol Auto-Detection                  │  │
+│  │         (initialize → check userAgent)                │  │
+│  └──────────────┬──────────────────┬─────────────────────┘  │
+│                 │                  │                         │
+│  ┌──────────────▼──────┐ ┌────────▼──────────────────┐     │
+│  │    ACP Client       │ │    Codex Client            │     │
+│  │  session/new        │ │  thread/start              │     │
+│  │  session/prompt     │ │  turn/start                │     │
+│  │  session/cancel     │ │  turn/interrupt            │     │
+│  └──────────┬──────────┘ └────────┬──────────────────┘     │
+│             │    WebSocket        │    WebSocket             │
+└─────────────┼─────────────────────┼─────────────────────────┘
+              ▼                     ▼
+    ┌─────────────────┐   ┌─────────────────┐
+    │  ACP Agent      │   │  Codex Server   │
+    │  (stdio-to-ws)  │   │  (app-server)   │
+    └─────────────────┘   └─────────────────┘
+</pre>
+  </div>
+</section>
+
+<section>
+  <h2>⚡ Quick Start</h2>
+  <div class="quickstart">
+<pre>
+<span class="comment"># 🔓 Clone the repo</span>
+<span class="cmd">git clone https://github.com/friuns2/Agmente.git && cd Agmente</span>
+
+<span class="comment"># 🍎 iOS — open in Xcode</span>
+<span class="cmd">open Agmente.xcodeproj</span>
+
+<span class="comment"># 🤖 Android — build APK</span>
+<span class="cmd">cd AgmenteAndroid && ./gradlew assembleDebug</span>
+
+<span class="comment"># 🔌 Start a local agent</span>
+<span class="cmd">npx -y @rebornix/stdio-to-ws --persist "npx @google/gemini-cli --experimental-acp" --port 8765</span>
+
+<span class="comment"># 🚀 Add ws://localhost:8765 in the app → Connect → Code from your phone!</span>
+</pre>
+  </div>
+</section>
+
+<section>
+  <h2>🛠️ Tech Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-icon">🍎</div>
+      <h4>SwiftUI</h4>
+      <p>iOS native UI framework</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">🤖</div>
+      <h4>Jetpack Compose</h4>
+      <p>Android native UI toolkit</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">⚛️</div>
+      <h4>React Native</h4>
+      <p>Cross-platform mobile</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">🔌</div>
+      <h4>WebSocket</h4>
+      <p>Real-time agent communication</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">📦</div>
+      <h4>Swift Package Manager</h4>
+      <p>ACP SDK distribution</p>
+    </div>
+    <div class="tech-card">
+      <div class="tech-icon">💉</div>
+      <h4>Hilt / Dagger</h4>
+      <p>Android dependency injection</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-line"><strong>Built with SwiftUI, Kotlin Compose, and an unhealthy obsession with mobile agent UX</strong> 🔬</p>
+  <p><em>"They said 'just use the terminal.' We said 'hold my phone.'"</em> 😏</p>
+  <br />
+  <p>MIT License &copy; 2026 — <a href="https://github.com/friuns2/Agmente">GitHub</a></p>
+</footer>
+
+</body>
+</html>

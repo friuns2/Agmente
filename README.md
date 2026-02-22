@@ -9,6 +9,7 @@
 [![React Native](https://img.shields.io/badge/React_Native-0.84-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://reactnative.dev)
 [![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android%20%7C%20Web-blueviolet?style=for-the-badge)](https://apps.apple.com/us/app/agmente/id6756249477)
 [![App Store](https://img.shields.io/badge/App_Store-LIVE-brightgreen?logo=apple&logoColor=white&style=for-the-badge)](https://apps.apple.com/us/app/agmente/id6756249477)
+[![APK Download](https://img.shields.io/badge/APK-Download-3DDC84?logo=android&logoColor=white&style=for-the-badge)](https://github.com/friuns2/Agmente/releases/latest)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-🔥%20WORKS-brightgreen?style=for-the-badge)](#)
 [![Stars](https://img.shields.io/github/stars/rebornix/Agmente?style=for-the-badge&logo=github&color=gold)](https://github.com/rebornix/Agmente/stargazers)
@@ -54,10 +55,28 @@ Yes, that's a full coding agent interface. Yes, that's on your iPhone. **Yes, it
 <div align="center">
 <table>
 <tr>
-<td align="center" width="100%">
-<img src="docs/app-preview-wide.jpg" width="700" />
-<br /><b>💬 The Full Experience</b><br />
-<sub>Server list with connection status on the left. Full chat transcript with <b>tool calls</b>, <b>file changes</b>, and <b>plan mode</b> on the right. This is not a mockup — this is the real app.</sub>
+<td align="center" width="60%">
+<img src="docs/app-preview-wide.jpg" width="600" />
+<br /><b>🍎 iOS — The Full Experience</b><br />
+<sub>Server list with connection status. Full chat transcript with <b>tool calls</b>, <b>file changes</b>, and <b>plan mode</b>.</sub>
+</td>
+</tr>
+<tr>
+<td>
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/screenshots/android-sessions.png" width="280" />
+<br /><b>🤖 Android — Session List</b><br />
+<sub>Connected & initialized. Server status, sessions, <b>New Chat</b> button.</sub>
+</td>
+<td align="center" width="50%">
+<img src="docs/screenshots/android-home.png" width="280" />
+<br /><b>🤖 Android — Chat View</b><br />
+<sub>Tool calls, file changes, markdown rendering — all native Compose.</sub>
+</td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
@@ -97,6 +116,14 @@ Yes, that's a full coding agent interface. Yes, that's on your iPhone. **Yes, it
 ```bash
 # 🎉 Just download it
 # https://apps.apple.com/us/app/agmente/id6756249477
+```
+
+### 🤖 Android (APK Download)
+
+```bash
+# 📦 Grab the latest APK from GitHub Releases
+# https://github.com/friuns2/Agmente/releases/latest
+# Sideload it — no Play Store needed. No signing drama.
 ```
 
 ### 🏗️ Build from Source (iOS)
